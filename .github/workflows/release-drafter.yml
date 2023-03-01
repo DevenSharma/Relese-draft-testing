@@ -31,3 +31,9 @@ jobs:
         #   disable-autolabeler: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: release-drafter/release-drafter@master
+        with:
+          version: ${{ steps.version.outputs.version }}
+          publish: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
